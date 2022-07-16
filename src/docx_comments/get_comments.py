@@ -28,13 +28,13 @@ def get_comments(file_name: str | Path) -> list[dict[str, str]]:
     ----------
     https://stackoverflow.com/questions/47390928/extract-docx-comments
     """
-    docx_zip = zipfile.ZipFile(file_name)
-    comments_xml = docx_zip.read("word/comments.xml")
+    with zipfile.ZipFile(file_name, "r") as docx_zip:
+        comments_xml = docx_zip.read("word/comments.xml")
     comments = etree.XML(comments_xml).xpath("//w:comment", namespaces=ooxml_namespaces)
     comments_parsed = [
         {
-            "author": c.xpath("@w:author", namespaces=ooxml_namespaces),
-            "date": c.xpath("@w:date", namespaces=ooxml_namespaces),
+            "author": c.xpath("@w:author", namespaces=ooxml_namespaces)[0],
+            "date": c.xpath("@w:date", namespaces=ooxml_namespaces)[0],
             "text": c.xpath("string(.)", namespaces=ooxml_namespaces),
         }
         for c in comments
