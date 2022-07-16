@@ -1,15 +1,27 @@
 # docx-comments
 
-[![Actions Status][actions-badge]][actions-link]
-[![Documentation Status][rtd-badge]][rtd-link]
-[![Code style: black][black-badge]][black-link]
+[![Code style: black][black-badge]][black-link][![GitHub Discussion][github-discussions-badge]][github-discussions-link]
 
-[![PyPI version][pypi-version]][pypi-link]
-[![Conda-Forge][conda-badge]][conda-link]
-[![PyPI platforms][pypi-platforms]][pypi-link]
+Extract comments from Word files. This is mostly meant as a script to put
+comments in a text file.
 
-[![GitHub Discussion][github-discussions-badge]][github-discussions-link]
-[![Gitter][gitter-badge]][gitter-link]
+To install and run
+
+```
+pip install git+https://github.com/frank1010111/docx-comments.git
+dump_comments <input_file.docx> <output_file.txt>
+```
+
+or, better,
+
+```
+pipx install git+https://github.com/frank1010111/docx-comments.git
+pipx run dump_comments <input_file.docx> <output_file.txt>
+```
+
+This was inspired by a mildly entertaining personal story and `khjughes`'s
+answer to someone with a similar issue on
+[StackOverflow](https://stackoverflow.com/questions/47390928/extract-docx-comments).
 
 <!-- prettier-ignore-start -->
 [actions-badge]:            https://github.com/frank10101111/docx-comments/workflows/CI/badge.svg
