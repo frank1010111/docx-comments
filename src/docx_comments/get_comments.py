@@ -1,4 +1,3 @@
-# get_comments.py
 """Get comments from Word document."""
 
 from __future__ import annotations
@@ -6,6 +5,7 @@ from __future__ import annotations
 import zipfile
 from pathlib import Path
 
+import click
 from lxml import etree
 
 ooxml_namespaces = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
@@ -42,4 +42,18 @@ def get_comments(file_name: str | Path) -> list[dict[str, str]]:
     return comments_parsed
 
 
-# @click
+@click.command()
+@click.argument("in_file")
+@click.argument("out_file")
+def dump_comments(in_file: str, out_file: str) -> None:
+    """Dump comment texts from a Word file to a .txt file.
+
+    Arguments:
+
+    in_file : Input Word file
+
+    out_file :  Output text file
+    """  # noqa: D
+    comments = get_comments(in_file)
+    with open(out_file, "w") as f:
+        f.writelines(c["text"] + "\n" for c in comments)

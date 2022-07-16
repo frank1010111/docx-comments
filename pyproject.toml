@@ -60,6 +60,8 @@ homepage = "https://github.com/frank10101111/docx-comments"
 [tool.pdm.dev-dependencies]
 devtest = ["pytest"]
 
+[project.scripts]
+dump_comments = "docx_comments.get_comments:dump_comments"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -75,7 +77,7 @@ testpaths = [
 files = "src"
 python_version = "3.8"
 warn_unused_configs = true
-strict = true
+strict = false
 show_error_codes = true
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 warn_unreachable = true
