@@ -21,7 +21,7 @@ def test_comments():
     assert c1["author"] == "Unknown Author"
     date = parser.parse(c1["date"])
     assert date == datetime(2022, 7, 16, 13, 1, 52, tzinfo=tzutc())
-    assert comments[1]["text"] == "test2"
+    assert comments[1]["text"] == "Test2"
 
 
 def test_dump_comments(tmp_path):
@@ -40,3 +40,16 @@ def test_dump_comments(tmp_path):
     with open(test_out) as f:
         output_text = f.read()
     assert correct_text == output_text
+
+
+def test_dump_sort(tmp_path):
+    """Test that comments are sorted."""
+    test_out = tmp_path / "test.txt"
+
+    subprocess.run(
+        ["dump_comments", "tests/data/test_document.docx", test_out, "-s"],
+        check=True,
+    )
+    with open(test_out) as f:
+        lines = f.readlines()
+    assert lines == ["Test2\n", "This is a test comment\n"]

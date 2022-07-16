@@ -43,17 +43,16 @@ def get_comments(file_name: str | Path) -> list[dict[str, str]]:
 
 
 @click.command()
-@click.argument("in_file")
-@click.argument("out_file")
-def dump_comments(in_file: str, out_file: str) -> None:
-    """Dump comment texts from a Word file to a .txt file.
-
-    Arguments:
-
-    in_file : Input Word file
-
-    out_file :  Output text file
-    """  # noqa: D
+@click.argument("in_file", type=click.Path(exists=True))
+@click.argument("out_file", type=click.Path(writable=True))
+@click.option(
+    "--sort", "-s", "sorted", is_flag=True, help="sort comments alphabetically"
+)
+def dump_comments(in_file: str, out_file: str, sorted: bool = False) -> None:
+    """Dump comment texts from a Word file (IN_FILE) to a .txt file (OUT_FILE)."""
     comments = get_comments(in_file)
+    texts = [c["text"] for c in comments]
+    if sorted:
+        texts.sort()
     with open(out_file, "w") as f:
-        f.writelines(c["text"] + "\n" for c in comments)
+        f.writelines([t + "\n" for t in texts])
