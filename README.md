@@ -1,6 +1,11 @@
 # docx-comments
 
-[![Code style: black][black-badge]][black-link][![GitHub Discussion][github-discussions-badge]][github-discussions-link]
+[![License][license-badge]][license-link]
+[![Python version][python-badge]][python-link]
+
+[![Code-cov][codecov-badge]][codecov-link]
+[![Code style: black][black-badge]][black-link]
+[![Pre-commit][pre-commit-badge]][pre-commit-link]
 
 Extract comments from Word files. This is mostly meant as a script to put
 comments in a text file.
@@ -29,15 +34,13 @@ answer to someone with a similar issue on
 [black-badge]:              https://img.shields.io/badge/code%20style-black-000000.svg
 [black-link]:               https://github.com/psf/black
 [conda-badge]:              https://img.shields.io/conda/vn/conda-forge/docx-comments
-[conda-link]:               https://github.com/conda-forge/docx-comments-feedstock
-[github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github
-[github-discussions-link]:  https://github.com/frank10101111/docx-comments/discussions
-[gitter-badge]:             https://badges.gitter.im/https://github.com/frank10101111/docx-comments/community.svg
-[gitter-link]:              https://gitter.im/https://github.com/frank10101111/docx-comments/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
-[pypi-link]:                https://pypi.org/project/docx-comments/
-[pypi-platforms]:           https://img.shields.io/pypi/pyversions/docx-comments
-[pypi-version]:             https://badge.fury.io/py/docx-comments.svg
-[rtd-badge]:                https://readthedocs.org/projects/docx-comments/badge/?version=latest
-[rtd-link]:                 https://docx-comments.readthedocs.io/en/latest/?badge=latest
 [sk-badge]:                 https://scikit-hep.org/assets/images/Scikit--HEP-Project-blue.svg
+[license-badge]:            https://img.shields.io/badge/License-BSD_3--Clause-orange.svg
+[license-link]:             https://opensource.org/licenses/BSD-3-Clause
+[codecov-badge]:            https://codecov.io/gh/frank1010111/docx-comments/branch/master/graph/badge.svg?token=ZWEQSAXJIH
+[codecov-link]:             https://codecov.io/gh/frank1010111/docx-comments
+[pre-commit-badge]:         https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+[pre-commit-link]:          https://github.com/pre-commit/pre-commit
+[python-badge]:             https://img.shields.io/badge/Python-3.8%2C%203.9%2C%203.10-blue
+[python-link]:              https://www.python.org/downloads/
 <!-- prettier-ignore-end -->
