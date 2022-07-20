@@ -72,6 +72,9 @@ testpaths = [
     "tests",
 ]
 
+[tool.coverage.run]
+branch = true
+source = ["pywaterflood"]
 
 [tool.mypy]
 files = "src"
@@ -89,7 +92,7 @@ profile = "black"
 
 
 [tool.pylint]
-master.py-version = "3.7"
+master.py-version = "3.8"
 master.ignore-paths= ["src/docx_comments/_version.py"]
 reports.output-format = "colorized"
 similarities.ignore-imports = "yes"
