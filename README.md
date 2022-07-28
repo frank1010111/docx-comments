@@ -37,7 +37,7 @@ answer to someone with a similar issue on
 [sk-badge]:                 https://scikit-hep.org/assets/images/Scikit--HEP-Project-blue.svg
 [license-badge]:            https://img.shields.io/badge/License-BSD_3--Clause-orange.svg
 [license-link]:             https://opensource.org/licenses/BSD-3-Clause
-[codecov-badge]:            https://codecov.io/gh/frank1010111/docx-comments/branch/master/graph/badge.svg?token=ZWEQSAXJIH
+[codecov-badge]:            https://codecov.io/gh/frank1010111/docx-comments/branch/main/graph/badge.svg?token=ZWEQSAXJIH
 [codecov-link]:             https://codecov.io/gh/frank1010111/docx-comments
 [pre-commit-badge]:         https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 [pre-commit-link]:          https://github.com/pre-commit/pre-commit
