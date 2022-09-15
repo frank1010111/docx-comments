@@ -21,7 +21,7 @@ or, better,
 
 ```
 pipx install git+https://github.com/frank1010111/docx-comments.git
-pipx run dump_comments <input_file.docx> <output_file.txt>
+dump_comments <input_file.docx> <output_file.txt>
 ```
 
 This was inspired by a mildly entertaining personal story and `khjughes`'s
