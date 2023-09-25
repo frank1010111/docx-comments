@@ -53,3 +53,15 @@ def test_dump_sort(tmp_path):
     with open(test_out) as f:
         lines = f.readlines()
     assert lines == ["Test2\n", "This is a test comment\n"]
+
+def test_dump_dedupe(tmp_path):
+    """Test de-duplicate for dump_comments."""
+    test_out = tmp_path / "test.txt"
+
+    subprocess.run(
+        ["dump_comments", "tests/data/test_document.docx", test_out, "-d"],
+        check=True,
+    )
+    with open(test_out) as f:
+        lines = f.readlines()
+    assert lines == ["Test2\n", "This is a test comment\n"]
