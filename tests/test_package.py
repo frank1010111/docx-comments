@@ -15,7 +15,7 @@ def test_version():
 
 def test_comments():
     comments = m.get_comments("tests/data/test_document.docx")
-    assert len(comments) == 2
+    assert len(comments) == 3
     c1 = comments[0]
     assert c1["text"] == "This is a test comment"
     assert c1["author"] == "Unknown Author"
@@ -52,7 +52,8 @@ def test_dump_sort(tmp_path):
     )
     with open(test_out) as f:
         lines = f.readlines()
-    assert lines == ["Test2\n", "This is a test comment\n"]
+    assert lines == ["Test2\n", "Test2\n", "This is a test comment\n"]
+
 
 def test_dump_dedupe(tmp_path):
     """Test de-duplicate for dump_comments."""
@@ -64,4 +65,4 @@ def test_dump_dedupe(tmp_path):
     )
     with open(test_out) as f:
         lines = f.readlines()
-    assert lines == ["Test2\n", "This is a test comment\n"]
+    assert lines == ["This is a test comment\n", "Test2\n"]
