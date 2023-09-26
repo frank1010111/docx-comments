@@ -48,8 +48,16 @@ def get_comments(file_name: str | Path) -> list[dict[str, str]]:
 @click.option(
     "--sort", "-s", "sorted", is_flag=True, help="sort comments alphabetically"
 )
-@click.option("-d","--remove-duplicates","remove_duplicates", is_flag=True, help="remove duplicate comments")
-def dump_comments(in_file: str, out_file: str, sorted: bool = False, remove_duplicates: bool = False) -> None:
+@click.option(
+    "-d",
+    "--remove-duplicates",
+    "remove_duplicates",
+    is_flag=True,
+    help="remove duplicate comments",
+)
+def dump_comments(
+    in_file: str, out_file: str, sorted: bool = False, remove_duplicates: bool = False
+) -> None:
     """Dump comment texts from a Word file (IN_FILE) to a .txt file (OUT_FILE)."""
     comments = get_comments(in_file)
     texts = [c["text"] for c in comments]
