@@ -10,19 +10,30 @@
 Extract comments from Word files. This is mostly meant as a script to put
 comments in a text file.
 
-To install and run
+To install, use one of these commands
 
+
+**acceptable**
 ```
 pip install git+https://github.com/frank1010111/docx-comments.git
-dump_comments <input_file.docx> <output_file.txt>
 ```
 
-or, better,
-
+**better**
 ```
 pipx install git+https://github.com/frank1010111/docx-comments.git
+```
+
+**best**
+```
+uv tool install git+https://github.com/frank1010111/docx-comments.git
+```
+
+Then, to run
+
+```
 dump_comments <input_file.docx> <output_file.txt>
 ```
+
 
 This was inspired by a mildly entertaining personal story and `khjughes`'s
 answer to someone with a similar issue on
@@ -41,6 +52,6 @@ answer to someone with a similar issue on
 [codecov-link]:             https://codecov.io/gh/frank1010111/docx-comments
 [pre-commit-badge]:         https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 [pre-commit-link]:          https://github.com/pre-commit/pre-commit
-[python-badge]:             https://img.shields.io/badge/Python-3.8%2C%203.9%2C%203.10-blue
+[python-badge]:             https://img.shields.io/badge/Python-3.9_--_3.13-blue
 [python-link]:              https://www.python.org/downloads/
 <!-- prettier-ignore-end -->
