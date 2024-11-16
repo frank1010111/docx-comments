@@ -12,18 +12,20 @@ comments in a text file.
 
 To install, use one of these commands
 
+**acceptable:**
 
-**acceptable**
 ```
 pip install git+https://github.com/frank1010111/docx-comments.git
 ```
 
-**better**
+**better:**
+
 ```
 pipx install git+https://github.com/frank1010111/docx-comments.git
 ```
 
-**best**
+**best:**
+
 ```
 uv tool install git+https://github.com/frank1010111/docx-comments.git
 ```
@@ -34,18 +36,13 @@ Then, to run
 dump_comments <input_file.docx> <output_file.txt>
 ```
 
-
 This was inspired by a mildly entertaining personal story and `khjughes`'s
 answer to someone with a similar issue on
 [StackOverflow](https://stackoverflow.com/questions/47390928/extract-docx-comments).
 
 <!-- prettier-ignore-start -->
-[actions-badge]:            https://github.com/frank10101111/docx-comments/workflows/CI/badge.svg
-[actions-link]:             https://github.com/frank10101111/docx-comments/actions
 [black-badge]:              https://img.shields.io/badge/code%20style-black-000000.svg
 [black-link]:               https://github.com/psf/black
-[conda-badge]:              https://img.shields.io/conda/vn/conda-forge/docx-comments
-[sk-badge]:                 https://scikit-hep.org/assets/images/Scikit--HEP-Project-blue.svg
 [license-badge]:            https://img.shields.io/badge/License-BSD_3--Clause-orange.svg
 [license-link]:             https://opensource.org/licenses/BSD-3-Clause
 [codecov-badge]:            https://codecov.io/gh/frank1010111/docx-comments/branch/main/graph/badge.svg?token=ZWEQSAXJIH
