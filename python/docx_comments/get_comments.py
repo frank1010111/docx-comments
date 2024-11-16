@@ -6,12 +6,13 @@ import zipfile
 from pathlib import Path
 
 import click
+from docx_comments._core import get_comments
 from lxml import etree
 
 ooxml_namespaces = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
 
 
-def get_comments(file_name: str | Path) -> list[dict[str, str]]:
+def get_comments_old(file_name: str | Path) -> list[dict[str, str]]:
     """Extract comments from Word file.
 
     Parameters
