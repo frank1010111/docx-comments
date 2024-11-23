@@ -5,7 +5,7 @@ build-backend = "maturin"
 
 [project]
 name = "docx_comments"
-version = "0.2.0"
+version = "1.0.0"
 authors = [{ name = "Frank Male", email = "frank.male@psu.edu" }]
 maintainers = [{ name = "Frank Male", email = "frank.male@psu.edu" }]
 license = { file = "LICENSE" }
