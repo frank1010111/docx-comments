@@ -2,16 +2,17 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import click
+
 from docx_comments._core import get_comments
 
 
 @click.command()
 @click.argument("in_file", type=click.Path(exists=True))
 @click.argument("out_file", type=click.Path(writable=True))
-@click.option(
-    "--sort", "-s", "sorted", is_flag=True, help="sort comments alphabetically"
-)
+@click.option("--sort", "-s", "sorted", is_flag=True, help="sort comments alphabetically")
 @click.option(
     "-d",
     "--remove-duplicates",
@@ -29,5 +30,5 @@ def dump_comments(
         texts.sort()
     if remove_duplicates:
         texts = list(dict.fromkeys(texts))
-    with open(out_file, "w", encoding="utf-8") as f:
+    with Path(out_file).open("w", encoding="utf-8") as f:
         f.writelines([t + "\n" for t in texts])

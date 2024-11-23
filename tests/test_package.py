@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import subprocess
 from datetime import datetime
+from pathlib import Path
 
 from dateutil import parser
 from dateutil.tz import tzutc
@@ -35,9 +36,9 @@ def test_dump_comments(tmp_path):
         ],
         check=True,
     )
-    with open("tests/data/test_comments.txt") as f:
+    with Path("tests/data/test_comments.txt").open() as f:
         correct_text = f.read()
-    with open(test_out) as f:
+    with test_out.open() as f:
         output_text = f.read()
     assert correct_text == output_text
 
@@ -50,7 +51,7 @@ def test_dump_sort(tmp_path):
         ["dump_comments", "tests/data/test_document.docx", test_out, "-s"],
         check=True,
     )
-    with open(test_out) as f:
+    with test_out.open() as f:
         lines = f.readlines()
     assert lines == ["Test2\n", "Test2\n", "This is a test comment\n"]
 
@@ -63,6 +64,6 @@ def test_dump_dedupe(tmp_path):
         ["dump_comments", "tests/data/test_document.docx", test_out, "-d"],
         check=True,
     )
-    with open(test_out) as f:
+    with test_out.open() as f:
         lines = f.readlines()
     assert lines == ["This is a test comment\n", "Test2\n"]
