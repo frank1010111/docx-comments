@@ -1,5 +1,5 @@
 """
-Copyright (c) 2022 Frank Male. All rights reserved.
+Copyright (c) 2022-2024 Frank Male. All rights reserved.
 
 docx-comments: gather comments from a Word docx file
 """

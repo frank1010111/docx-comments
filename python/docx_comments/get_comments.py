@@ -1,4 +1,4 @@
-"""Get comments from Word document."""
+"""Get comments from a Word document."""
 
 from __future__ import annotations
 
