@@ -3,9 +3,10 @@ from __future__ import annotations
 import subprocess
 from datetime import datetime
 
-import docx_comments as m
 from dateutil import parser
 from dateutil.tz import tzutc
+
+import docx_comments as m
 
 
 def test_version():
