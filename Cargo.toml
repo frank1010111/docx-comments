@@ -1,0 +1,13 @@
+[package]
+name = "docx-comments"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.16", features = ["extension-module", "abi3-py37"] }
+quick-xml = "0.6"
+zip = "0.5.5"

@@ -12,7 +12,7 @@ from __future__ import annotations
 # -- Project information -----------------------------------------------------
 
 project = "docx-comments"
-copyright = "2022, Frank Male"
+copyright = "2022-2024, Frank Male"
 author = "Frank Male"
 
 
