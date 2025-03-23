@@ -67,16 +67,12 @@ jobs:
     needs: [pre-commit]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Build sdist and wheel
         run: pipx run build
-
-      - uses: actions/upload-artifact@v3
-        with:
-          path: dist
 
       - name: Check products
         run: pipx run twine check dist/*
