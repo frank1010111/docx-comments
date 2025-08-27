@@ -21,7 +21,7 @@ jobs:
         os: [ubuntu-22.04, windows-2022, macos-14]
     env:
       # rust is not available for musl linux on i686. see https://github.com/rust-lang/rustup/issues/2984
-      CIBW_SKIP: "*-musllinux_i686"
+      CIBW_SKIP: "*-musllinux_i686 cp31?t-win*"
       CIBW_BEFORE_ALL_LINUX:
         "curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y"
       CIBW_ENVIRONMENT: 'PATH="$PATH:$HOME/.cargo/bin"'
