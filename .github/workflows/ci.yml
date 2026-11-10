@@ -48,6 +48,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
       - name: Test package
         run: uv run --extra test pytest --cov=docx_comments --cov-append --cov-report=xml
 
@@ -67,6 +70,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
 
       - name: Build sdist and wheel
         run: uv build
